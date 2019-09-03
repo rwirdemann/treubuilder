@@ -4,6 +4,9 @@
 <h3>Accounts</h2>
 <ul>
     {{range .AccountSystem.Accounts}}
-    <li>{{.Owner}} <a href="/accounts/{{.ID}}">Show</a></li>
+    <li>
+        {{.Owner}} <a href="/accounts/{{.ID}}">Show | </a>
+        <a href="/accounts.js/{{.ID}}">Show JS</a>
+    </li>
     {{end}}
 </ul>

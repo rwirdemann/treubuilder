@@ -1,6 +1,11 @@
+import AccountDetails from './account-details.js'
+
 var app = new Vue({
     el: '#app',
+    components: {
+        'account-details': AccountDetails
+    },    
     data: {
-        message: 'Hello Vue!'
+        owner: 'Paura'
     }
 }) 
