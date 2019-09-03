@@ -17,5 +17,5 @@ type Account struct {
 // An AccountSystem represents a group of related Accounts.
 type AccountSystem struct {
 	Name     string
-	Accounts []Account
+	Accounts map[int]Account
 }

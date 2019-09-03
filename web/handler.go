@@ -2,7 +2,6 @@ package web
 
 import (
 	"html/template"
-	"io/ioutil"
 	"net/http"
 	"strconv"
 
@@ -36,11 +35,10 @@ func AddAccountHandler() {
 }
 
 func AddAccountHandlerVue() {
+	template := template.Must(template.ParseFiles("web/vue/account.html"))
 	R.HandleFunc("/accounts.js/{id}", func(w http.ResponseWriter, r *http.Request) {
-		dat, err := ioutil.ReadFile("web/templates/account-vue.html")
-		if err != nil {
-			panic(err)
-		}
-		w.Write(dat)
+		id, _ := strconv.Atoi(mux.Vars(r)["id"])
+		a := service.GetAccount(id)
+		template.Execute(w, struct{ Account domain.Account }{a})
 	})
 }

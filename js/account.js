@@ -6,7 +6,4 @@ var app = new Vue({
     components: {
         'account-details': AccountDetails
     },    
-    data: {
-        owner: 'Paura'
-    }
 }) 

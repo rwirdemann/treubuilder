@@ -1,9 +1,8 @@
 export default {
-    name: "AccountDetails",
-    data: function () {
-        return {
-          owner: "Paura"
-        }
-      },
-      template: '<div><h2>{{ owner }}</h2><h3>Bookings</h3></div>'  
+  name: "AccountDetails",
+  props: {
+    accountid: String,
+    owner: String,
+  },
+  template: '<div><h2>{{ accountid }}: {{ owner }}</h2><h3>Bookings</h3></div>'
 }
