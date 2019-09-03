@@ -1,0 +1,9 @@
+<h1>Treubuilder Account System</h1>
+
+<h2>{{.AccountSystem.Name}}</h2>
+<h3>Accounts</h2>
+<ul>
+    {{range .AccountSystem.Accounts}}
+    <li>{{.Owner}} <a href="/accounts/{{.ID}}">Show</a></li>
+    {{end}}
+</ul>
