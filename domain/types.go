@@ -1,10 +1,8 @@
 package domain
 
-import "math/big"
-
 // A Booking represents a single booking.
 type Booking struct {
-	Amount big.Float
+	Amount float64
 }
 
 // An Account represents an account with bookings.

@@ -26,11 +26,15 @@ func AddAccountSystemHandler() {
 }
 
 func AddAccountHandler() {
-	template := template.Must(template.ParseFiles("web/templates/account.html"))
+	template := template.Must(template.ParseFiles("web/templates/account-system.html"))
 	R.HandleFunc("/accounts/{id}", func(w http.ResponseWriter, r *http.Request) {
 		id, _ := strconv.Atoi(mux.Vars(r)["id"])
+		as := service.GetAccountSystem(1)
 		a := service.GetAccount(id)
-		template.Execute(w, struct{ Account domain.Account }{a})
+		template.Execute(w, struct {
+			AccountSystem domain.AccountSystem
+			Account       domain.Account
+		}{as, a})
 	})
 }
 
